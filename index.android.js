@@ -21,10 +21,4 @@ export default class community extends Component {
     }
 }
 
-AppRegistry
-    .registerComponent(
-        "community"
-        , () =>
-            community
-    )
-;
+AppRegistry.registerComponent("community", () => community);
