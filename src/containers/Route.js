@@ -1,5 +1,5 @@
 import {connect,} from 'react-redux';
-import {Route,} from '../Components';
+import {Route,} from '../components';
 
 const mapProps = (state, {path, render,}) => {
     return {

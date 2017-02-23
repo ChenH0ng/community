@@ -1,4 +1,4 @@
-import {ZhTabs,} from '../Components';
+import {ZhTabs,} from '../components';
 import {connect,} from 'react-redux';
 import {h, Component,} from 'react-unity';
 import {Dimensions,} from 'react-native';

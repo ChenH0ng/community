@@ -7,6 +7,10 @@ export default class Tabs extends Component {
         onScroll && onScroll(e.nativeEvent.contentOffset.x);
     }
 
+    scrollTo(dest) {
+        this.refs.view.scrollTo(dest);
+    }
+
     render({...rest,}) {
         return h(ScrollView, {
             ...rest,
@@ -14,9 +18,10 @@ export default class Tabs extends Component {
             horizontal: true,
             pagingEnabled: true,
             showsHorizontalScrollIndicator: false,
-            showsVerticalScrollIndicator: true,
+            showsVerticalScrollIndicator: false,
             scrollEventThrottle: 200,
             onScroll: this.handleScroll,
+            ref: 'view',
         });
     }
 }

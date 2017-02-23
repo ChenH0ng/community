@@ -1,5 +1,5 @@
 import {connect,} from 'react-redux';
-import {ZhNavigator,} from '../Components';
+import {ZhNavigator,} from '../components';
 import {goRoute,} from '../behaviors';
 
 const mapProps = (state, {visible,}) => ({

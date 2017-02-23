@@ -13,6 +13,7 @@ export default class ZhTabs extends Component {
             width,
             borderTopWidth: .3,
             borderTopColor: '#ccc',
+            backgroundColor: '#fff',
         },
         icon: {
             color: '#ddd',

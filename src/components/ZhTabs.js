@@ -15,7 +15,7 @@ export default class ZhTabs extends Component {
         slider: {
             backgroundColor: '#0080FF'
         },
-        item:{
+        item: {
             justifyContent: 'center',
             alignItems: 'center',
         },
@@ -38,16 +38,16 @@ export default class ZhTabs extends Component {
         onScroll && onScroll(offset);
     }
 
-    render({routes, activePath, nextPath, content,}) {
+    render({routes, activePath, nextPath, content, style,}) {
         return h(View, {
-            style: ZhTabs.styles.container,
+            style: [ZhTabs.styles.container, style,],
             children: [
                 h(Navigator, {
                     containerStyle: ZhTabs.styles.background,
                     itemStyle: ZhTabs.styles.item,
                     children: routes.map(({text, path,}) => h(Text, {
                         children: text,
-                        style:[
+                        style: [
                             ZhTabs.styles.route,
                             path === nextPath ? ZhTabs.styles.activeRoute : null,
                         ],

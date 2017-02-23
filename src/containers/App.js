@@ -1,4 +1,4 @@
-import {Tab,} from '../Components';
+import {Tab, Popups,} from '../components';
 import {connect,} from 'react-redux';
 import {h, Component,} from 'react-unity';
 import {View, Dimensions, Text, StyleSheet, Animated, Easing,} from 'react-native';
@@ -59,15 +59,16 @@ class App extends Component {
             children: [
                 h(Home, {
                     onScroll: this.handleScroll,
-                    onSwipe: this.handleScroll.bind(this,0),
+                    onSwipe: this.handleScroll.bind(this, 0),
                 }),
                 h(Message, {
                     onScroll: this.handleScroll,
-                    onSwipe: this.handleScroll.bind(this,0),
+                    onSwipe: this.handleScroll.bind(this, 0),
                 }),
                 h(ZhNavigator, {
                     visible: this.top === 0 || isUp,
                 }),
+                h(Popups, {}),
             ],
         });
     }

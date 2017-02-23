@@ -1,8 +1,9 @@
-import {Tab, TbBarEntry,} from '../Components';
+import {Tab, TbBarEntry,} from '../components';
 import {connect,} from 'react-redux';
 import {h, Component,} from 'react-unity';
 import {Text, View,} from 'react-native';
 import ZhTabs from './ZhTabs';
+import {showCommunity,} from '../behaviors';
 
 class Home extends Component {
     routes = [{text: '社区', path: '/home'}, {text: '热门话题', path: '/home/praise'}];
@@ -12,7 +13,7 @@ class Home extends Component {
         onScroll && onScroll(top);
     }
 
-    render({activePath, onSwipe,}) {
+    render({activePath, onSwipe, onEntryPress,}) {
         if (activePath.indexOf('/home') !== 0)return null;
         return h(ZhTabs, {
             onSwipe,
@@ -21,13 +22,19 @@ class Home extends Component {
                 h(Tab, {
                     style: {
                         height: 1000,
-                        backgroundColor:'#fff'
+                        backgroundColor: '#fff'
                     },
                     key: 0,
                     onScroll: this.handleScroll,
                     children: [
-                        h(TbBarEntry,{key:0}),
-                        h(TbBarEntry,{key:1}),
+                        h(TbBarEntry, {
+                            key: 0,
+                            onPress: onEntryPress,
+                        }),
+                        h(TbBarEntry, {
+                            key: 1,
+                            onPress: onEntryPress,
+                        }),
                     ]
                 }),
                 h(Tab, {
@@ -42,7 +49,13 @@ class Home extends Component {
     }
 }
 
-const mapProps = (state, {onSwipe,}) => ({onSwipe, ...state.router,});
+const mapProps = (state, {onSwipe,}) => ({
+    onSwipe, ...state.router,
+    communities: [
+
+    ],
+    onEntryPress: showCommunity,
+});
 export default connect(mapProps)(Home);
 
 

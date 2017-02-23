@@ -1,4 +1,4 @@
-import {Tab,} from '../Components';
+import {Tab,} from '../components';
 import {connect,} from 'react-redux';
 import {h, Component,} from 'react-unity';
 import ZhTabs from './ZhTabs';

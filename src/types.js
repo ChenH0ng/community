@@ -1,2 +1,4 @@
 export const UPDATE_ACTIVE_PATH = 'UPDATE_ACTIVE_PATH';
 export const UPDATE_NEXT_PATH = 'UPDATE_NEXT_PATH';
+export const PUSH_POPUP = 'PUSH_POPUP';
+export const POP_POPUP = 'POP_POPUP';
